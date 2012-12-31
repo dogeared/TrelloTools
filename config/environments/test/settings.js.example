@@ -1,0 +1,5 @@
+module.exports = {
+  key: 'YOUR PUBLIC KEY',
+  token: 'YOUR GENERATED TOKEN',
+  board: 'A NEW BOARD NAME'
+}
