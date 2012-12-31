@@ -24,8 +24,17 @@ Feature: Get stats from Trello
       | A     |
     And I retrieve the lanes
     And I add cards
-      | card   |
-      | task 1 |
-      | task 2 |
+      | card   | desc           |
+      | task 1 | This is task 1 |
+      | task 2 | This is task 2 |
+    And I add the "steps" checklist to each card
+      | name           |
+      | Do this first  |
+      | Do this second |
     When I retrieve the cards
     Then I should see the cards that were created
+    And each card should have a "steps" checklist with
+      | name           |
+      | Do this first  |
+      | Do this second |
+      
