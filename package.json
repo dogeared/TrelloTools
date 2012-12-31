@@ -1,5 +1,5 @@
 {
-  "name": "TrelloTools",
+  "name": "trello_tools",
   "version": "0.0.1",
   "dependencies": {
     "async": "0.1.22",

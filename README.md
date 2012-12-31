@@ -6,7 +6,7 @@
 
 ## Install
 ```
-npm install TrelloTools
+npm install trello_tools
 ```
 
 ### Getting your key and token
