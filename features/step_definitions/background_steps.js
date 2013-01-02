@@ -8,7 +8,7 @@ Given(/^I have connected to the Trello API$/, function(step) {
   self.trello = new Trello(settings.key, settings.token)
   self.trello.get(
     '/1/members/me/boards', 
-    { fields: 'name' }, 
+    { fields: 'name', filter: 'open' }, 
     function(err, boards) {
       expect(err).to.be(null)
       self.boards = boards
