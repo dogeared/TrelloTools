@@ -1,8 +1,9 @@
+@trello
 $timeout 10
-Feature: Get stats from Trello
+Feature: Exercise various trello API features
   As a developer
   I want to know how our flow through the dev trello board is
-  So that we can improve the process
+  So that I can improve the process
 
   Background:
     Given I have connected to the Trello API
