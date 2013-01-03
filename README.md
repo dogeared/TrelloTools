@@ -97,7 +97,7 @@ The second parameter is optional. If provided, either or both ```since``` and ``
 trelloEvents.unmonitor(<board name>)
 ```
 
-Turns off Trello action monitoring for that specified board.
+Turns off Trello action monitoring for the specified board.
 
 ### monitoring
 
@@ -130,4 +130,4 @@ make
 ## ToDo/Issues
 
 * There is no support for paging and limits right now. If you are looking at a board with tons of actions, some might be missed.
-* While TrelloEvents supports monitoring more than one board, emitted events are not board specifici.
+* While TrelloEvents supports monitoring more than one board, emitted events are not board specific.
