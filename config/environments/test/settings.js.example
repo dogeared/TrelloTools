@@ -1,5 +1,8 @@
 module.exports = {
   key: 'YOUR PUBLIC KEY',
   token: 'YOUR GENERATED TOKEN',
+  // IMPORTANT: This board will have all kinds of WRITE actions
+  // done to it, including archiving all the lists and cards.
+  // Make damn sure it's a test board!
   board: 'A NEW BOARD NAME'
 }
