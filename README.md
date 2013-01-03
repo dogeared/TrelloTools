@@ -79,7 +79,8 @@ returns: { key: <key>, token: <token> }
 ### monitor
 
 ```
-trelloEvents.monitor(<board name>, { since: <date>, interval: <millis> })```
+trelloEvents.monitor(<board name>, { since: <date>, interval: <millis> })
+```
 
 This starts an event loop which retrieves Trello actions via the Trello API. Any actions that are retrieved will be emitted as events keyed on the type of action.
 
