@@ -57,6 +57,55 @@ trelloEvents.monitor('MyBoard')
 
 A complete list of all the actions exposed via the Trello API can be found [here][apidocs]
 
+## TrelloEvents API
+
+### constructor
+
+TrelloEvents uses the module pattern and as such the ```new``` opertor is not needed.
+
+```
+var TrelloEventsClass = require('trello_events')
+var trelloEvents = TrelloEventsClass(<key>, <token>)
+```
+
+### credentials
+
+```
+trelloEvents.credentials()
+```
+
+returns: { key: <key>, token: <token> }
+
+### monitor
+
+```
+trelloEvents.monitor(<board name>, { since: <date>, interval: <millis> })```
+
+This starts an event loop which retrieves Trello actions via the Trello API. Any actions that are retrieved will be emitted as events keyed on the type of action.
+
+The second parameter is optional. If provided, either or both ```since``` and ```interval``` can be provided.
+
+```since``` is a fully qualified date string in the form: 
+'2013-01-02T19:53:24.930Z'. Trello actions will be retrieved from the time after ```since```, if provided. If not provided, all Trello actions will be retrieved (see Issues below).
+
+```interval``` is the number of milliseconds between the event loop runs. NOTE: If the event loop (which make Trello API calls) runs longer than the interval you specify, the event loop will simply run again immediately. The default value for interval is: 1000
+
+### unmonitor
+
+```
+trelloEvents.unmonitor(<board name>)
+```
+
+Turns off Trello action monitoring for that specified board.
+
+### monitoring
+
+```
+trelloEvents.monitoring(<board name>)
+```
+
+returns: true || false
+
 ## Setup for running the tests
 
 You'll need to create a ```config/environments/test/settings.js``` based on the example file found there.
@@ -79,5 +128,5 @@ make
 
 ## ToDo/Issues
 
-* The timing of the event loop to check on actions should be configurable
-* While TrelloEvents supports monitoring more than one board, emitted events are not board specific
+* There is no support for paging and limits right now. If you are looking at a board with tons of actions, some might be missed.
+* While TrelloEvents supports monitoring more than one board, emitted events are not board specifici.

@@ -1,6 +1,6 @@
 {
   "name": "trello_tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "async": "0.1.22",
     "node-trello": "0.1.3",

@@ -15,7 +15,7 @@ Given(/^I setup the trello event listener$/, function(step) {
 
 When(/^I check the event information$/, function(step) {
   var self = this
-  self.trelloEvents.monitor(settings.board)
+  self.trelloEvents.monitor(settings.board, { interval: 1000 })
 
   var checkUnmonitored = function() {
     if (!self.trelloEvents.monitoring(settings.board)) {
@@ -33,9 +33,6 @@ When(/^I check the event information$/, function(step) {
   }
 
   var interval = setInterval(checkMonitored, 200)
-});
-
-Then(/^I should see that the lanes were created$/, function(step, table) {
 });
 
 Then(/^I should see the event for "([^"]*?)"$/, function(step, lane) {

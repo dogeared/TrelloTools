@@ -68,7 +68,7 @@ describe('When working with Trello events', function() {
 
   it('properly handles all events ', function(done) {
     var self = this
-    self.trelloEvents.monitor('MyBoard')
+    self.trelloEvents.monitor('MyBoard', { interval: 10 })
     setTimeout(function() {
       self.trelloEvents.unmonitor('MyBoard')
       expect(self.eventCounters).to.eql(self.expectedEventCounters)
@@ -81,7 +81,8 @@ describe('When working with Trello events', function() {
     self.expectedEventCounters.createBoard = 0
     self.expectedEventCounters.createList = 1
     self.trelloEvents.monitor(
-      'MyBoard', '2013-01-02T19:53:24.930Z'
+      'MyBoard', 
+      { since: '2013-01-02T19:53:24.930Z', interval: 10 }
     )
     setTimeout(function() {
       self.trelloEvents.unmonitor('MyBoard')
