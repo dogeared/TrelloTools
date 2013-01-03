@@ -1,13 +1,17 @@
 {
   "name": "trello_tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "async": "0.1.22",
+    "node-trello": "0.1.3",
+    "underscore": "1.4.3"
+  },
+  "devDependencies": {
     "expect.js": "0.1.2",
     "eyes": "0.1.8",
-    "node-trello": "0.1.3",
-    "oauth": "0.9.8",
-    "underscore": "1.4.3"
+    "mocha": "1.7.4",
+    "sinon": "1.5.2",
+    "sinon-mocha": "0.0.3"
   },
   "engines": { "node": ">=0.6.17" }
 }
